@@ -1,0 +1,24 @@
+{
+    "name": "wapone/module-customers-counter",
+    "description": "The extension counts new daily customers and send them to e-commerce manager by email.",
+    "type": "magento2-module",
+    "license": "MIT",
+    "version": "1.0.1",
+    "require": {
+        "php": ">=7.0"
+    },
+    "authors": [{
+        "name": "WaPoNe",
+        "email": "michele@fantetti.net",
+        "homepage": "https://www.fantetti.net",
+        "role": "Developer"
+    }],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "WaPoNe\\CustomersCounter\\": ""
+        }
+    }
+}
