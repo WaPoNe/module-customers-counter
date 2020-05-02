@@ -1,9 +1,9 @@
 {
     "name": "wapone/module-customers-counter",
-    "description": "The extension counts new daily customers and send them to e-commerce manager by email.",
+    "description": "The extension counts new daily customers and send them to merchant by email.",
     "type": "magento2-module",
-    "license": "MIT",
-    "version": "1.0.1",
+    "license": "OSL 3.0",
+    "version": "1.0.0",
     "require": {
         "php": ">=7.0"
     },

@@ -12,10 +12,13 @@
 -->
 
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-    <module name="WaPoNe_CustomersCounter" setup_version="1.0.0">
-        <sequence>
-            <module name="Magento_Customer"/>
-        </sequence>
-    </module>
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template
+            id="wapone_customers_counter"
+            label="WaPoNe Customers Counter"
+            file="wapone_customers_counter.html"
+            type="html"
+            module="WaPoNe_CustomersCounter"
+            area="adminhtml"
+    />
 </config>

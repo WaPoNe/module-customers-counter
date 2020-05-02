@@ -1,0 +1,20 @@
+<?php $newdailycustomers = $block->getNewdailycustomers() ?>
+
+<?php foreach ($newdailycustomers as $newdailycustomer): ?>
+    <?php
+        if ($newdailycustomer['is_active'] == 1) {
+            $is_active = 'Active';
+        } else {
+            $is_active = 'Inactive';
+        }
+    ?>
+    <tr>
+        <td>
+            <?php echo $newdailycustomer['firstname']
+                . " " . $newdailycustomer['lastname']
+                . ', ' . $newdailycustomer['email']
+                . ' - ' . $is_active
+            ?>
+        </td>
+    </tr>
+<?php endforeach; ?>

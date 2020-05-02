@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento 2 extension to send new daily customers by email to merchant
+ *
+ * @category   Reporting & Analytics
+ * @package    WaPoNe_CustomersCounter
+ * @author     Michele Fantetti
+ * @copyright  Copyright (c) 2020 WaPoNe (https://www.fantetti.net)
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="wapone" translate="label" sortOrder="400">
+            <label>WaPoNe</label>
+        </tab>
+        <section id="customers_counter" translate="label" type="text" sortOrder="11"
+                 showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Customers Counter</label>
+            <tab>wapone</tab>
+            <resource>WaPoNe_CustomersCounter::config_coustomerscounter</resource>
+
+            <!-- General Parameters Group -->
+            <group id="general" translate="label" type="text" sortOrder="1"
+                   showInDefault="1" showInWebsite="1" showInStore="0">
+                <label>General Parameters</label>
+                <!-- Status -->
+                <field id="status" translate="label" type="select" sortOrder="1"
+                       showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Customers Counter status</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                </field>
+            </group>
+
+            <!-- Group: Email Parameters -->
+            <group id="email" translate="label" type="text" sortOrder="2"
+                   showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Email Parameters</label>
+                <attribute type="expanded">1</attribute>
+                <depends>
+                    <field id="customers_counter/general/status">1</field>
+                </depends>
+
+                <!-- Notifier Recepients -->
+                <field id="recipients" translate="label comment" sortOrder="1"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Recipient(s) email</label>
+                    <frontend_model>WaPoNe\CustomersCounter\Block\System\Config\Recipient</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                    <comment>
+                        <![CDATA[Add recipient(s) email.]]>
+                    </comment>
+                    <depends>
+                        <field id="customers_counter/general/status">1</field>
+                    </depends>
+                </field>
+            </group>
+
+        </section>
+    </system>
+</config>

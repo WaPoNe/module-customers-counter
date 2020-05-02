@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento 2 extension to send new daily customers by email to merchant
+ *
+ * @category   Reporting & Analytics
+ * @package    WaPoNe_CustomersCounter
+ * @author     Michele Fantetti
+ * @copyright  Copyright (c) 2020 WaPoNe (https://www.fantetti.net)
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <resource id="WaPoNe_CustomersCounter::config_coustomerscounter"
+                                      title="WaPoNe Customer Counter Section"
+                                      sortOrder="16"/>
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

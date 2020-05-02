@@ -12,10 +12,12 @@
 -->
 
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-    <module name="WaPoNe_CustomersCounter" setup_version="1.0.0">
-        <sequence>
-            <module name="Magento_Customer"/>
-        </sequence>
-    </module>
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <customers_counter>
+            <general>
+                <status>0</status>
+            </general>
+        </customers_counter>
+    </default>
 </config>
